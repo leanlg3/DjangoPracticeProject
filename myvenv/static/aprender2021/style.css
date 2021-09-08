@@ -1,0 +1,11 @@
+li a {
+    color: white;
+    celeste: 33C7FF;
+}
+
+styledimg {
+background-image: url("images/cables.gif");
+background-repeat: no-repeat;
+width: 600px;
+height: 200px;
+}

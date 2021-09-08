@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .models import Question,Choice
@@ -17,6 +18,10 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return the last five published questions."""
         return Question.objects.all()
+
+class HomeView(LoginRequiredMixin, generic.TemplateView):
+    template_name = 'aprender2021/home.html'
+    login_url = '/admin'
 
 
 class DetailView(generic.DetailView):

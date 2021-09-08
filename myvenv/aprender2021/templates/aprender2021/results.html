@@ -1,4 +1,12 @@
-<a href="http://127.0.0.1:8000/app" class="btn btn-primary">Home</a>
+{% load static %}
+{% load social_share %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'aprender2021/style.css' %}">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<a href="http://127.0.0.1:8000/home/questions" class="btn btn-success">Volver a las preguntas</a>
+
 
 <h1>{{ question.question }}</h1>
 
@@ -8,4 +16,10 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'aprender2021:detail' question.id %}">Vote again?</a>
+<button class="btn btn-primary"><span
+            class="fab fa-facebook">{% post_to_facebook data "Post to Facebook!" %}</span></button>
+    <br>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<a href="{% url 'aprender2021:detail' question.id %}"  class="btn btn-success">Vote again?</a>
